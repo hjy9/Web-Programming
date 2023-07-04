@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMI</title>
+    <style>
+        .atr{font-weight: bold;}
+        .BMI_index1 {color: blue; font-size: 40px;}
+        .BMI_index2 {color: black; font-size: 40px;}
+        .BMI_index3 {color: orange; font-size: 40px;}
+        .BMI_index4 {color: red; font-size: 40px;}
+    </style>
+</head>
+<body>
+    <table border="1">
+        <script type="text/javascript">
+            var name = prompt("이름을 입력하세요...");
+            var height = prompt(name+"님의 키를 입력하세요...");
+            var weight = prompt(name+"님의 몸무게를 입력하세요...");
+            var BMI=Math.round(weight/((height/100)**2)*10)/10;
+
+                        
+            document.write("<tr><td class='atr'>이름</td><td>"+name+"</td></tr>");
+            document.write("<tr><td class='atr'>키</td><td>"+height+"</td></tr>");
+            document.write("<tr><td class='atr'>몸무게</td><td>"+weight+"</td></tr>");
+            document.write("<tr><td class='atr'>BMI</td><td>"+BMI+"</td></tr>");
+            if (BMI < 18.5){
+                BMI_index="저체중";
+                document.write("<tr><td class='atr'>비만도</td><td class=BMI_index1>"+BMI_index+"</td></tr>");
+            }
+            else if((BMI>= 18.5) && (BMI < 25.0)){
+                BMI_index="정상";
+                document.write("<tr><td class='atr'>비만도</td><td class=BMI_index2>"+BMI_index+"</td></tr>");
+            }
+            else if((BMI >= 25.0) && (BMI < 30.0)){
+                BMI_index="과체중";
+                document.write("<tr><td class='atr'>비만도</td><td class=BMI_index3>"+BMI_index+"</td></tr>");
+            }
+            else{
+                BMI_index="비만";
+                document.write("<tr><td class='atr'>비만도</td><td class=BMI_index4>"+BMI_index+"</td></tr>");
+            }
+
+        </script>
+    </table>
+</body>
+</html>
